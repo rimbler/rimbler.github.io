@@ -1,0 +1,8 @@
+Adding Angular to Express
+
+MongoDB database
+API with Express and Node.JS
+Express App(frontend) with Express, Node.JS and AngularJS
+
+MVW framework, W for 'WHATEVER'
+

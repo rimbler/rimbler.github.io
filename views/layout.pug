@@ -1,0 +1,24 @@
+doctype html
+html
+  head(lang='en-US')
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js')
+    
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js')
+  body
+    nav.navbar.navbar-expand-sm.bg-dark.navbar-dark
+      ul.navbar-nav
+        li.nav-item.active
+          a.navbar-brand(href='/') Ichor, LLC
+        li.nav-item
+          a.nav-link(href='/resume') Resume
+        li.nav-item
+          a.nav-link(href='/projects') Projects
+        li.nav-item
+          a.nav-link(href='/index') About
+    block content
+    block custom_script

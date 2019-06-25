@@ -1,0 +1,16 @@
+extends layout
+
+block custom_script
+    script(src='./javascripts/gl-matrix.js')
+    script(src='./javascripts/shader.js')
+    script(src='./javascripts/loadTexture.js')
+    script(src='./javascripts/main.js')
+    
+block content
+    div(ng-app='', onload='draw();')
+        canvas#glCanvas(width='640', height='480')
+            | Some Canvas Alt Text
+        p#rotationID
+        p#fpsID
+        p#infoID
+

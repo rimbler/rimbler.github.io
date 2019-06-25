@@ -1,0 +1,3 @@
+# Don't Track These Files
+node_modules/
+public/javascripts/web-demo.js

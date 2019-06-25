@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  script(src='./angular/angular.min.js')
+  div(ng-app='')
+    div
+      h1 Angular Testing
+      input(type='text', ng-model='title', placeholder='input')
+      p Input Text: {{title}}
+    div
+      h1 Input something in the input box:
+      input(type='text', ng-model='name', placeholder='Enter name here')
+      p Hello {{name}}
+
