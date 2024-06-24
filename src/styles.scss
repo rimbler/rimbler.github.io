@@ -1,1 +1,204 @@
 /* You can add global styles to this file, and also import other style files */
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Lato is first selected, if unavailable, selects next in list */
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
+}
+
+.header {
+  /* viewheight, as a percent (*/
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, #7ed56f75, #28b48583) , url(img/hero.jpg);
+  background-size: cover;
+  /* matching the element to the specific top of the page */
+  background-position: top;
+  /* can use 'clippy' to get clip path coordinates online and paste into css */
+  clip-path: polygon( 0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+}
+
+.logo-box {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+}
+
+.logo {
+  height: 50px;
+}
+
+.logo:hover {
+  animation: moveInRight 2s ease-out;
+}
+
+.text-box {
+  position:absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  /* this prevents the element from minorly shaking with animations
+      we are just hacking that small shake, nobody knows why?? tf */
+  backface-visibility: hidden;
+  margin-bottom: 20px;
+}
+
+.heading-primary-main {
+  display: block;
+  font-size: 60px;
+  font-weight: 400;
+  letter-spacing: 35px;
+  animation-name: moveInLeft;
+  animation-duration: 1s;
+  /* animation-delay: 1s; */
+  /* animation-iteration-count: 4;  number of times executed*/
+  /* see animation timing function on mdn docs for more info  */
+
+}
+
+.heading-primary-sub {
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 17.4px;
+  animation: moveInRight 1s ease-out;
+}
+
+@keyframes moveInLeft {
+  0% {
+      opacity: 0;
+      transform: translateX(-100px);
+  }
+  80% {
+      transform: translateX(10px);
+  }
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+
+@keyframes moveInRight {
+  0% {
+      opacity: 0;
+      transform: translateX(100px);
+  }
+  80% {
+      transform: translateX(-10px);
+  }
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+
+@keyframes moveInBottom {
+  0% {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  100% {
+      opacity: 1;
+      transform: translate(0);
+  }
+}
+
+.btn:link, .btn:visited {
+  /* link is a specific selector under special conditions, when it is an anchor element */
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 30px, 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
+  position: relative;
+}
+/* .btn:visited {
+  adds styling to previously accessed link
+} */
+.btn:hover {
+  transform: translateY(-3px);
+
+}
+.btn:active {
+  transform: translateY(-1px);
+}
+.btn-white {
+  color: #777;
+  background-color: #fff;
+  padding: 10px;
+}
+
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all .4s;
+}
+.btn-white::after {
+  background-color: #fff;
+}
+/* after sudo element only when button is in hover state */
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+
+}
+
+.btn-animated {
+  animation: moveInBottom .5s ease-out 0.75s;
+  animation-fill-mode: backwards;
+}
+
+/* specificity
+0 - 0 - 0 - 0
+important ID class element
+!important jumps level to highest
+ID is like #nav
+class like btnWhite
+element like div etc
+'*' is lowest at 0x4
+*/
+
+/* value processing  */
+/* declared, cascaded specified computed used  */
+/* declared represents the descriptions in CSS
+cascaded is determinedfrom specificity
+specified is if no other value provided
+computed, converting relative to absolute
+used - actual calcuation on layout
+actual - final rendered CSS */
+
+/* REM is 16px, default text size */
+
+
